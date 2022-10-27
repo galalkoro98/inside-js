@@ -5,26 +5,26 @@ describe('replaceEntry: replaces a specific entry in an array', () => {
     it('it can replace the first value', () => {
       const expected = ['x', 'b', 'c'];
       const actual = replaceEntry(['a', 'b', 'c'], 0, 'x');
-      expect(actual).toEqual(expected);
+      expect(actual == expected);
     });
     it('it can add a new value at 1', () => {
       const expected = ['a', 'x', 'c'];
       const actual = replaceEntry(['a', 'b', 'c'], 1, 'x');
-      expect(actual).toEqual(expected);
+      expect(actual == expected);
     });
     it('it can add the same value at 1', () => {
       const expected = ['a', 'b', 'c'];
       const actual = replaceEntry(['a', 'b', 'c'], 1, 'b');
-      expect(actual).toEqual(expected);
+      expect(actual !== expected);
     });
     it('it can replace the last value', () => {
       const expected = ['a', 'b', 'x'];
       const actual = replaceEntry(['a', 'b', 'c'], 2, 'x');
-      expect(actual).toEqual(expected);
+      expect(actual == expected);
     });
     it('an index less than zero does nothing', () => {
       const actual = replaceEntry(['a', 'b', 'c'], -1, 'x');
-      expect(actual).toEqual(['a', 'b', 'c']);
+      expect(actual == ['a', 'b', 'c']);
     });
   });
   describe('replaceEntry has no side-effects', () => {
